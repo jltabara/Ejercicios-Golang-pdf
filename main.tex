@@ -1,0 +1,668 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[spanish]{babel}  
+\usepackage{indentfirst} %%%%%%%%%%%%%%%%Crear un indent al principio
+\usepackage{tcolorbox}
+\usepackage{enumerate}%%%%%%%%%%%%%%%%Mejoras del entorno enumerate
+\usepackage{graphicx}
+\usepackage{amsmath}%%%%%%%%
+\usepackage[T1]{fontenc}
+\usepackage[margin = 2cm]{geometry}
+\usepackage{fourier}
+\usepackage{minted}
+\usepackage{tcolorbox}
+\pagestyle{empty}
+\author{}
+\title{Ejercicios Programación en Go}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{ejer}{}[section]
+
+\begin{document}
+
+
+\section{Impresión de texto por consola.}
+
+\begin{ejer}
+Crea un programa que imprima \verb|Hola mundo|. Utiliza la función predefinida \verb|println()|.
+\end{ejer}
+
+\begin{ejer}
+Crea un programa que imprima tu nombre y tus dos apellidos, en tres líneas distintas, usando tres veces la función \verb|println()|.
+\end{ejer}
+
+\begin{ejer}
+Crea un programa que imprima tu nombre y tus dos apellidos, en tres líneas distintas, usando una única vez la función \verb|println()| y el caracter de escape \verb|\n|.
+\end{ejer}
+
+\begin{ejer}
+Crea un programa que imprima por consola \verb|Estoy estudiando "Go" como un poseso|. Utiliza caracteres de escape para imprimir las comillas.
+\end{ejer}
+
+\begin{ejer}
+Crea un programa que imprima por consola \verb|Estoy estudiando "Go" como un poseso|. Utiliza una cadena \textit{raw} para poder imprimir las comillas.
+\end{ejer}
+
+\newpage
+
+\section{Introducción a las variables}
+
+\noindent\textbf{Nota.} A partir de ahora usaremos la función \verb|Println()| del paquete \verb|fmt| para imprimir datos por pantalla.
+
+\bigskip
+
+\begin{ejer}
+El programa guarda en una variable de tipo \verb|string| una cadena de texto y la imprime por pantalla.
+\end{ejer}
+
+\begin{ejer}
+El programa guarda dos números decimales en dos variables de tipo \verb|float64|. Muestra por pantalla la suma, resta, multiplicación y división de dichas variables.
+\end{ejer}
+
+\begin{ejer}
+El programa guarda dos números enteros en variables de tipo \verb|int64| y muestra por pantalla la suma, la resta, la multiplicación, el cociente del primer valor entre el segundo y el resto del primer valor entre el segundo.
+\end{ejer}
+
+\begin{ejer}
+Guarda números enteros en variables de tipo \verb|int8|, \verb|int16|, \verb|int32| e \verb|int64| e imprime su contenido por pantalla.
+\end{ejer}
+
+\begin{ejer}
+Guarda en variables de tipo \verb|float32| y \verb|float64| sendos números decimales e imprímelos por pantalla.
+\end{ejer}
+
+\begin{ejer}
+Guarda en variables de tipo \verb|complex64| y \verb|complex128| sendos números enteros e imprímelos por pantalla. Para crear uno de ellos utiliza la función predefinida \verb|complex()|.
+\end{ejer}
+
+\begin{ejer}
+Utiliza la declaración corta para guardar en variables un número entero, un número decimal y un número complejo. Con el verbo \verb|%T| y la función \verb|Printf()| muestra el tipo de dato que infiere el compilador para cada tipo de dato.
+\end{ejer}
+
+\begin{ejer}
+Crea una variable de tipo \verb|complex128| y guarda un dato en ella. Con ayuda de las funciones \verb|real()| e \verb|imag()| guarda las partes real e imaginaria del número complejo, dejando que Go infiera el tipo de dato de las variables. Imprime el contenido de las variables y su tipo de dato.
+\end{ejer}
+
+\newpage
+
+\section{Programas secuenciales}
+
+\begin{ejer}
+El programa pide dos números reales  y muestra su suma, su resta, su multiplicación y su división.
+\end{ejer}
+
+\begin{ejer}
+El programa pide dos números enteros y muestra su suma, su resta, su multiplicación, su división entera y el resto de la división.
+\end{ejer}
+
+\begin{ejer}
+El programa pide el precio de un producto. Calcula el precio con IVA y lo guarda en una variable.  Muestra por pantalla el precio del producto con  IVA.
+\end{ejer}
+
+\begin{ejer}
+El peso en Marte de una persona es aproximadamente el  38\% de su peso en la Tierra. El programa pide tu peso  en la Tierra, calcula tu peso en Marte e imprime ambos resultados por pantalla.
+\end{ejer}
+
+\begin{ejer}
+El programa pide el lado de un cuadrado, calcula el perímetro y el área y muestra ambos resultados por pantalla.
+\end{ejer}
+
+\begin{ejer}
+El programa pide la base y la altura de un rectángulo y calcula el perímetro y el área. Muestra los resultados por pantalla.
+\end{ejer}
+
+\begin{ejer}    
+El programa pide el radio de una circunferencia y calcula la longitud y el área. Se debe utilizar la constante \verb|Pi| del paquete \verb|math|.
+\end{ejer}
+
+\begin{ejer}
+Sabemos que la velocidad de la luz es una constante igual a 299792, medida en km por segundo. Calcula, de modo exacto (entero), el valor en metros de un año luz. Suponga que el año tiene exactamente 365 días.
+\end{ejer}
+
+\begin{ejer}
+El programa pide la distancia en km de un planeta al Sol y devuelve el número de segundos que tarda la luz en llegar del Sol al planeta.
+\end{ejer}
+
+\begin{ejer}
+El programa pide dos valores de tipo enteros y los guarda en variables $x$ e $y$.  Posteriormente intercambia sus valores. El programa debe mostrar el contenido de las variables antes del cambio y después del cambio.
+\end{ejer}
+
+\begin{ejer}
+La calificación final de un estudiante es la media ponderada de tres notas: la nota de prácticas que cuenta un 30\% del total, la nota teórica que cuenta un 60\% y la nota de participación que cuenta el 10\% restante. El programa pide las 3 notas en variables  y calcula la nota final.
+\end{ejer}
+
+\begin{ejer}
+Crea dos variables de tipo \verb|string|. \textit{Suma} el contenido de ambas variables y guarda el resultado en una nueva variable, también de tipo \verb|string|.
+\end{ejer}
+
+\begin{ejer}
+El programa pide el valor de dos catetos y calcula la hipotenusa. Se debe usar la función \verb|Sqrt()| del paquete \verb|math|.
+\end{ejer}
+
+\begin{ejer}
+El programa pide una cantidad de euros en una variable y la transforma en pesetas (1 euros equivale a 166.386 pesetas). Se debe utilizar una constante como factor de conversión.
+\end{ejer}
+
+\begin{ejer}
+El programa pide un entero y devuelve la cifra de las unidades de dicho número.
+\end{ejer}
+
+\begin{ejer}
+El programa  pide  la cantidad inicial, el rédito y el número de años. Devuelve la cantidad final aplicando interés compuesto. Se debe usar la función \verb|Pow()| del paquete \verb|math|.
+\end{ejer}
+
+\begin{ejer}
+El programa pide  el número de personas y el de pizzas. Devuelve el número de porciones que corresponde a cada persona y las porciones que sobran (cada pizza tiene 8 porciones).
+\end{ejer}
+
+\newpage
+
+\section{Programas secuenciales optativos.}
+
+\begin{ejer}
+El programa calcula las dos soluciones de una ecuación de  segundo grado:
+\[
+ax^2+bx+c=0
+\]
+Los valores de $a$, $b$ y $c$ se deben guardar en variables de tipo \verb|float64|.
+\end{ejer}
+
+\begin{ejer}
+Utiliza la función \verb|Printf()| y \verb|&| para localizar la posición en memoria de cualquier variable.
+\end{ejer}
+
+
+\begin{ejer}
+Utiliza la función \verb|Printf()| y \verb|%T| para comprobar el tipo de cualquier variable. Usa lo anterior para comprobar que Go siempre infiere el tipo \verb|int| y el tipo \verb|float64| cuando se usa el operador de declaración corta.
+\end{ejer}
+
+\begin{ejer}
+La función \verb|TypeOf()| del paquete\verb|reflect| nos permite ver el tipo de variable. Crea 3 variables de tipos distintos e imprime sus tipos.
+\end{ejer}
+
+\begin{ejer}
+Busca información en Internet sobre la función \verb|Intn()| del paquete \verb|rand| y simula el lanzamiento de un dado de 6 caras.
+\end{ejer}
+
+\begin{ejer}
+Intenta crea una variable cuyo identificador comience por un número y observa el error que arroja el compilador.
+\end{ejer}
+
+\begin{ejer}
+Busca en Internet las palabras clave (\textit{keywords}) del lenguaje Go. Intenta dar a una variable el nombre de una palabra reservada y observa el error.
+\end{ejer}
+
+\begin{ejer}
+Crea una variable de tipo \verb|int8| e intenta guardar en ella el número 1000. Observa el error. ¿Cuál es el mayor número que puede guardarse en una variable de tipo \verb|int8|?
+\end{ejer}
+
+\begin{ejer}
+Dentro de la función \verb|main()| creamos un nuevo bloque usando unas llaves. Se debe definir una variable dentro de ese bloque e imprimir el contenido de dicha variable. Si la orden de impresión está dentro del bloque no existe ningún problema. Si la sentencia está fuera da error. Ello tiene que ver con el alcance o \textbf{scope} de la variable.
+\end{ejer}
+
+\begin{ejer}
+Con ayuda de la función \verb|Printf()| y de los verbos \verb|%x|, \verb|%o| y \verb|%b| podemos imprimir números enteros en base hexadecimal, octal o binaria. Crea un programa con una variable entera e imprime dicha variable en base decimal, hexadecimal, octal y binaria.
+\end{ejer}
+
+\newpage
+
+\section{Sentencias de selección simple.}
+
+\begin{ejer}
+El programa pide un número entero y dice si es positivo o si no es positivo.
+\end{ejer}
+
+\begin{ejer}
+El programa pide la edad y responde si es mayor o menor de edad.
+\end{ejer}
+
+\begin{ejer}
+El programa pide dos números y devuelve el mayor de ellos.
+\end{ejer}
+
+\begin{ejer}
+El programa pide un número entero y responde si es par o impar.
+\end{ejer}
+
+\begin{ejer}
+El programa pide dos números enteros y responde si el primero es divisor del segundo.
+\end{ejer}
+
+\begin{ejer}
+El programa pide el precio de un artículo y la cantidad de artículos comprados. Debe devolver el precio total. Si el cliente compra 3 o más artículos se le aplica una rebaja del 20\% al precio final.
+\end{ejer}
+
+\newpage
+
+\section{Sentencias de selección compuesta}
+
+\begin{ejer}
+El programa pide tres números y devuelve el mayor de ellos.
+\end{ejer}
+
+\begin{ejer}
+El programa pide un número y dice si es positivo, nulo o negativo.
+\end{ejer}
+
+\begin{ejer}
+El programa pide una letra y responde si es vocal minúscula o si es otro tipo de carácter. Se recomienda usar \verb|switch|.
+\end{ejer}
+
+\begin{ejer}
+El programa pide un número entero y responde si está en el rango 18-25 o no lo está.
+\end{ejer}
+
+\begin{ejer}
+El programa lee tres números enteros. Después lee un cuarto número e indica si el número coincide con alguno de los introducidos con anterioridad.
+\end{ejer}
+
+\begin{ejer}
+El programa pide un número entero entre 1 y 12 y el programa le responde con el nombre del mes correspondiente.  Se recomienda usar \verb|switch|.
+\end{ejer}
+
+\end{document}
+
+\begin{ejer}
+El programa pide un número entero y responde si es múltiplo de 2 y de 3 a la vez.
+\end{ejer}
+
+\begin{ejer}
+El programa pide tres números enteros y los devuelve ordenados.
+\end{ejer}
+
+\begin{ejer}
+El programa pide tres números enteros y responde si con ellos se puede formar un triángulo o no.
+\end{ejer}
+
+\begin{ejer}
+Dada una calificación numérica del 0 al 10 el programa indica si corresponde a un insuficiente (menor a 5), a un suficiente (entre 5 y 6), a un bien (entre 6 y 7), a un notable (entre 7 y 9) o a un sobresaliente (entre 9 y 10).
+\end{ejer}
+
+\begin{ejer}
+El programa decide si la ecuación de segundo grado tiene soluciones reales.
+\[
+ax^2+bx+c=0
+\]
+En caso de no tener soluciones reales nos informa. En caso de tenerlas las calcula.
+\end{ejer}
+
+\begin{ejer}
+El programa lee tres números. Después debe leer un cuarto número e indicar si el número coincide con alguno de los introducidos con anterioridad.
+\end{ejer}
+
+\begin{ejer}
+El programa pide un número entero. Si el número es par lo divide por 2 y si es impar lo multiplica por 3 y le suma 1. Muestra el resultado por pantalla.
+\end{ejer}
+
+\begin{ejer}
+El programa pide el valor de un ángulo positivo y responde si es agudo, recto, obtuso, llano o mayor de 180.
+\end{ejer}
+
+\begin{ejer}
+El programa pide la temperatura del agua y responde si está en estado sólido, líquido o gaseoso. Suponemos que el cero absoluto está en -273 grados centígrados.
+\end{ejer}
+
+\begin{ejer}
+El programa pide un número entero y comprueba si es múltiplo de 3 de 4 o de 5. En cada uno de los tres casos da una respuesta afirmativa o negativa.
+\end{ejer}
+
+\begin{ejer}
+El recibo de la electricidad se elabora de la siguiente forma:
+
+\begin{itemize}
+
+\item 1 € de gastos fijos.
+
+\item 0.50 €/Kw para los primeros 100 Kw.
+
+\item 0.35 €/Kw para los siguientes 150 Kw.
+
+\item 0.25 €/Kw para el resto.
+
+\end{itemize}
+
+Escribe un programa que lea de teclado dos números, que representan los dos últimos
+valores del contador de la luz (al restarlos obtendremos el consumo en Kw ), y calcule e
+imprima en pantalla el importe total a pagar en función del consumo realizado.
+\end{ejer}
+
+\begin{ejer}
+Escribe un programa que permita emitir la factura correspondiente a una compra de un
+artículo determinado del que se adquieren una o varias unidades. El IVA a aplicar es del
+12\%, además si el precio bruto (precio de venta + IVA) es mayor de 300€, se aplicará un
+descuento del 5\%. En el caso de que se aplique el descuento, deberemos indicarlo por
+pantalla.
+\end{ejer}
+
+\newpage
+
+\section{Bucles.}
+
+\begin{enumerate}[\noindent 1.-]
+
+\item Imprime los números del 1 al 10 empleando un bucle y cumpliendo:
+
+\begin{itemize}
+    
+\item Un bucle \verb|for| con tres partes separadas por punto y coma.
+
+\item Un bucle \verb|for| con una única condición.
+
+\item Un bucle \verb|for| infinito y \verb|break|.
+
+\end{itemize}
+
+\item El programa pide un número entero menor y un número entero mayor e imprime todos los números enteros empezando en el menor y terminando en el mayor.
+
+\item El programa pide dos números enteros, el primero menor que el segundo. Debe imprimir todos los números enteros, en orden descendente, desde el mayor al menor.
+
+\item El programa pide un número del 1 al 10 y muestra su tabla de multiplicar.
+
+\item La cata Fizz-Buzz. Debemos escribir los números del 1 al 100 cumpliendo las siguientes condiciones:
+
+\begin{itemize}
+    
+\item Si el número es múltiplo de 3 debe escribir \verb|Fizz| en lugar del número.
+
+\item Si el número es múltiplo de 5 debe escribir \verb|Buzz| en lugar del número.
+
+\item Si el número es múltiplo de 3 y de 5 a la vez entonces debe escribir \verb|FizzBuzz| en lugar del número.
+
+\item En todos los otros casos debe escribir directamente el número.
+    
+\end{itemize}
+
+\item El programa pide valores enteros hasta que se introduce un cero. En dicho momento el programa termina.
+
+\item El programa pide valores enteros hasta que se introduce un cero. Debe devolver el mayor de los números introducidos (sin contar el 0).
+
+\item El programa pide un número entero menor que 100 y suma todos los números entre el 1 y el 100.
+
+\item El programa pide 6 datos al usuario y devuelve el máximo, el mínimo y la media.
+
+\item El programa pide dos naturales y calcula la potencia, donde el primer número es la base y el segundo el exponente. No se puede usar la función \textit{pow}.
+
+\item El programa pide un número natural del 1 al 15 y calcula su factorial.
+
+\item El programa pide un número natural $n$ y realiza la suma de los primeros $n$ números impares.
+
+\item El programa pide un número natural $n$ y calcula la suma de los cuadrados de todos los naturales entre $1$ y $n$.
+
+\item El programa  pide un número $n$ y calcula el valor de: 1!+2!+3!+...+n! (suma de factoriales).
+
+\item El programa pide un número $n$ y calcula el valor de: $2^1+2^2+2^3+...+2^n$.
+
+\item El programa pide un número $n$ y calcula el valor de: 1-2+3-4+5-6 ...n.
+
+\item El programa pide un natural $n$ y escribe los primeros $n$ números de la serie de Fibonnacci.
+
+\item El programa pide un número natural y devuelve la descomposición en factores primos (sin utilizar potencias).
+
+\end{enumerate}
+
+\newpage
+
+\section*{Arrays y slices.}
+
+\begin{ejer}
+Crea un array entero de tamaño 5 sin inicializar. Imprime el array. Imprime también el tipo de dato de la variable array.
+\end{ejer}
+
+\begin{ejer}
+Crea un array de tamaño 5, de cualquier tipo y no lo inicialices. Utiliza la función \verb|len()| para ver el tamaño del array.
+\end{ejer}
+
+\begin{ejer}
+Crea un array entero de tamaño 5 y un slice entero con 5 elementos. Imprime el tipo de dato de cada variable.
+\end{ejer}
+
+\begin{ejer}
+Crea un array de tipo entero e inicialízalo en la misma definición con los siguientes valores: 1, 1, 2, 3, 5, 8, 13. Crea también un slice con los mismos elementos.
+\end{ejer}
+
+\begin{ejer}
+Crea un array de tipo entero y tamaño 7. Inicializa uno a uno los valores. Introduce los siguientes valores: 1, 1, 2, 3, 5, 8, 13.
+\end{ejer}
+
+\begin{ejer}
+Crea un array de tipo entero y tamaño 7. Inicializa los 3 primeros elementos directamente en la definición.
+\end{ejer}
+
+\begin{ejer}
+Crea un array entero de tamaño 10 e inicializa únicamente los elementos segundo y noveno.
+\end{ejer}
+
+\begin{ejer}
+Crea un array de tipo entero y tamaño 7. No inicializarlo. Utiliza un bucle \verb|for| para pedir al usuario que lo rellene.
+\end{ejer}
+
+\begin{ejer}
+Crea un slice de tipo entero con 10 elementos. Los elementos deben ser los primeros términos de la sucesión de Fibonacci.
+\end{ejer}
+
+\begin{itemize}
+
+\item Muestra el primer elemento, el quinto y el último.
+
+\item Cambia el valor del último elemento.
+
+\item Utiliza un bucle para mostrar todos los elementos del array, uno en cada línea.
+
+\end{itemize}
+
+\item Crea un slice de enteros de cualquier tamaño. Utiliza la función \verb|len()| para acceder al último elemento.
+
+\item Crea un slice de enteros y utiliza \verb|for| y \verb|range| para mostrar por pantalla el índice y el dato guardado en dicho índice.
+
+\item Crea un slice de números reales e inicialízalo en su definición. Utiliza un bucle \verb|for| para calcular la suma de todos los elementos del array. 
+
+\item Crea un slice de números enteros e inicialízalo en su definición. Utiliza un bucle \verb|for| para calcular el producto de todos los elementos del array. 
+
+\item El programa debe leer 5 datos enteros y guardarlos en un array. Posteriormente debe  mostrar en cada línea el índice del array y su contenido.
+
+\item Crea un slice de enteros e inicialízalo. Debes mostrar los elementos del slice en orden inverso.
+
+\item Crea un slice de números enteros. El programa debe escribir el mayor de los elementos del array.
+
+\item Crea dos slices de enteros con 5 y 7 elementos. Inicialízalos. Crea un nuevo slice con 12 elementos de tal forma que los primeros 5 sean los del primer array y los siguientes 7 sean los del otro array. Utiliza \verb|...| para concatenar slices.
+
+\item Crea un array con 5 números enteros. Posteriormente crea otro array que tenga el mismo tamaño, pero que todos los elementos estén multiplicados por 2. Muestra el último array.
+
+\item Se pide al usuario el tamaño de slice y posteriormente se le piden los datos a guardar en el slice.
+
+\item Crea un slice de reales, inicialízalo y calcula la media de sus elementos.
+
+\item Crea un array de 10 elementos. Haz un slice con los 5 primeros números. Modifica el primer elemento del array. Comprueba que se ha modificado tanto el array como el slice.
+
+\item Crea un slice vacío y utiliza la función \verb|append()| para incluir dentro de él 5 elementos.
+
+\item Crea un slice de tamaño 5 y capacidad 10. Rellena 10 items de dicho slice con la función \verb|append()|. Comprueba el tamaño y la capacidad una vez lleno.
+
+\item Crea un slice de enteros de 5 elementos y elimina el elemento central. Guarda el resultado en la misma variable.
+
+\item Crea un slice de enteros de 10 elementos. Elimina los elementos de las posiciones 4, 5 y 6 y guarda el resultado en la misma variable.
+
+\item Crea un arreglo multidimensional que sea equivalente a una matriz $2 \times 3$. Muestra el primer elemento de la primera fila y el último de la última fila.
+
+\end{enumerate}
+
+\newpage
+
+\section{Funciones.}
+
+\begin{ejer}
+Crea una función sin argumentos que devuelva tu nombre.
+\end{ejer}
+
+\begin{ejer}
+Crea una función que reciba como argumento el nombre de una persona y que salude a dicha persona.
+\end{ejer}
+
+\begin{ejer}
+Crea una función que reciba un entero y lo multiplique por 2.
+\end{ejer}
+
+\begin{ejer}
+Crea una función que reciba dos enteros y calcula su suma.
+\end{ejer}
+
+\begin{ejer}
+Crea una función que no reciba argumentos y que devuelva el nombre y el apellido en variables diferentes.
+\end{ejer}
+
+\begin{ejer}
+Crea una función que reciba dos enteros y devuelva el cociente y el resto.
+\end{ejer}
+
+\begin{ejer}
+Crear una función \verb|esPar()| que tenga como argumento un entero y devuelva un booleano.
+\end{ejer}
+
+\begin{ejer}
+Crea una función a la que se le pasa el nombre y devuelve una cadena donde se saluda a la persona invocada. Usa \verb|Sprint()| para devolver el resultado.
+\end{ejer}
+
+\begin{ejer}
+Crea una función que convierta de grados centígrados a grados Farhenheit.
+\end{ejer}
+
+\begin{ejer}
+Crea una función que tenga como argumentos los dos catetos de un triángulo rectángulo y que devuelva la hipotenusa.
+\end{ejer}
+
+\newpage
+
+\section{Funciones variadicas}
+
+\begin{ejer}
+Crea una función reciba una cantidad arbitraria de números enteros. La función debe imprimir el parámetro y el tipo del parámetro.
+\end{ejer}
+
+\begin{ejer}
+Crea una función que reciba una cantidad arbitraria de números enteros y que devuelva la suma de todos los números.
+\end{ejer}
+
+\begin{ejer}
+Crea una función que reciba una cantidad arbitraria de números enteros que devuelva el producto de todos ellos.
+\end{ejer}
+
+\begin{ejer}
+Crea una función que reciba una cantidad arbitraria de enteros y que devuelva su suma. Pasa a la variable un slice de enteros, desplegando el slice.
+\end{ejer}
+
+\begin{ejer}
+Crea una función que reciba un slice de enteros y devuelva la suma de todos los elementos.
+\end{ejer}
+
+\begin{ejer}
+Crea una función que sume dos enteros empleando un parámetro nombrado para el retorno.
+\end{ejer}
+
+\begin{ejer}
+Crea una función que sume dos enteros y muestra la firma de la función con ayuda de \verb|Printf()|.
+\end{ejer}
+
+\newpage
+
+\section{Estructuras.}
+
+\begin{ejer}
+Crea un tipo de dato \verb|struct|\verb|Rectangulo| con dos campos llamados \verb|base| y \verb|altura| de tipo flotante. Crea una variable sin inicializar de dicho tipo de dato. Imprime la variable y el tipo de dato de la variable.
+\end{ejer}
+
+\begin{ejer}
+Crea un tipo de dato rectángulo. Crea una variable sin inicializar de dicho tipo de dato. Utiliza la notación punto para rellenar los campos de la variable.
+\end{ejer}
+
+\begin{ejer}
+Crea un tipo de dato rectángulo  y variable de dicho tipo. Rellena los campos con la notación punto y muestra por separado el contenido de los campos de la variable.
+\end{ejer}
+
+\begin{ejer}
+Crea un tipo rectángulo y crea una variable inicializándola con la notación de los campos seguidos de dos puntos. Utiliza tambión la notación de columnas para inicializar.
+\end{ejer}
+
+\begin{ejer}
+Crea un tipo rectángulo  e inicializa una variable pasando sus valores por orden y sin indicar explícitamente el nombre de los campos.
+\end{ejer}
+
+\begin{ejer}
+Crea una variable de tipo rectángulo. Asigna dicha variable a otra variable. Modifica alguna de las variables y vuelve a imprimir ambas variables. Podemos observar que ambas variable son completamente independientes.
+\end{ejer}
+
+\begin{ejer}
+Crea un tipo de dato \verb|Persona| con los campos \verb|nombre| y \verb|edad|. Crea un tipo de dato \verb|Empleado| que contenga a una persona (el campo debe estar nombrado) y un campo llamado \verb|empleo|. Crea una instancia de Empleado.
+Imprime la variable entera y cada uno de sus campos por separado.
+\end{ejer}
+
+\begin{ejer}
+Haz el ejercicio anterior pero utilizando campos anónimos.
+\end{ejer}
+
+\begin{ejer}
+Crea una estructura \verb|Persona| con los campos \verb|Nombre|, \verb|Edad| y \verb|Peso|. Crea instancias vacías de las siguientes formas:
+
+\begin{itemize}
+
+\item Utilizando \verb|var|, el nombre y el tipo de dato.
+
+\item Con el operador de declaración corta y las llaves vacías.
+    
+\end{itemize}
+\end{ejer}
+
+\begin{ejer}
+Crea una estructura \verb|Persona| e inicializa variables de las siguientes formas:
+
+\begin{itemize}
+    
+\item Usando \verb|var| y rellenando los campos con la notación punto.
+
+\item Inicializando la variable, pasando los campos sin nombre y en el orden adecuado.
+
+\item Inicializando la variable, con los nombres de los campos y una sola línea.
+
+\item Inicializando la variable, pasando los nombres, seguido de \verb|:| y el valor. Cada campo en una línea distinta, finalizando con una coma.
+    
+\end{itemize}
+
+Imprime las variables con \verb|Println()| y también con \verb|Prinnf()| y el verbo \verb|%+v|.
+\end{ejer}
+
+\begin{ejer}
+Crea un método llamado \verb|Imprimir()| que muestre de manera ordenada el contenido de la variable (un campo por cada línea).
+\end{ejer}
+
+\begin{ejer}
+Crea una estructura \verb|Profesor|, con campos anónimos, que contenga una persona y el campo \verb|Asignatura|. Utiliza la notación punto para rellenar la variable. 
+\end{ejer}
+
+\begin{ejer}
+Crea una estructura \verb|Rectangulo|, con dos campos, \verb|base| y \verb|altura|. Crea los métodos \verb|Area()|, \verb|Perimetro()| y \verb|Diagonal()|.
+\end{ejer}
+
+
+\newpage
+
+\subsection*{Punteros.}
+
+\begin{enumerate}[\noindent 1.-]
+
+\item Crea un puntero a una variable entera y muestra el contenido de la variable y su dirección de memoria.
+
+\item Crea punteros a variables de tipo entero, booleano, string, flotante y array. Muestra sus tipos de datos por pantalla.
+
+\item Crea una variable entera y un puntero a dicha variable. Utiliza la desreferenciación para cambiar el valor de la variable usando el puntero.
+
+\item Crea una función que sea capaz de multiplicar por 2 el entero que le pasamos como argumento. Lo que debe ocurrir es que después de ejecutar la función la variable debe contener el doble del número que contenía antes.
+
+\item Crea una función que tenga como argumento un puntero a un slice de enteros. La función debe de sumar los elementos del slice y devolver el resultado.
+
+\item Crea una estructura para almacenar la base y la altura de un rectángulo.
+Crea una variable de dicho tipo. Crea una función llamada \verb|cambiaBase()|
+que nos permita cambiar el valor de la base en la estructura.
+
+
+\end{enumerate}
+
+
+\end{document}
